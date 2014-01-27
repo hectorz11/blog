@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block titulo %} {{ post.titulo|safe }} {% endblock %}
+
+{% block contenido %}
+
+	<div class="post detalles">
+		<h3><a href="{{ post.get_absolute_url }}">{{ post.titulo|upper|safe }}</a></h3>
+		<span class="metadata">{{ post.fecha|safe }} | Categoria: <a href="{{ post.categoria.get_absolute_url }}">{{ post.categoria }}</a></span>
+		<p>{{ post.contenido|safe|linebreaksbr }}</p>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block titulo %} Bienvenido {% endblock %}
+
+{% block contenido %}
+
+	<div class="welcome">
+		<h2>Seccion Blog!</h2>
+		<p>	Este es la primer trabajo que tuve en Django de la comunidad de Basadrinux, espero que pueda ser de provecho
+			a todos. Nuestro comunidad esta haciendo lo posible para poner su granito de arena, y demostrar que internet
+			puede ser trabajado con otras herramientas diferentes a PHP 0 .NET, como diria Wilber Zapana: Problemas?!u.u
+		</p>
+		<p>Aqui podriamos necesitar una paginacion ... :'V</p>
+	</div>
+
+	{% for post in posts %}
+		<div class="post">
+			<h3><a href="{{ post.get_absolute_url }}">{{ post.titulo|upper|safe }}</a></h3>
+			<span class="metadata">{{ post.fecha|safe }} | Categoria: <a href="{{ post.categoria.get_absolute_url }}">{{ post.categoria }}</a></span>
+			<p>{{ post.contenido|safe|truncatewords:50 }]</p>
+		</div>
+	{% endfor %}
+	
+{% endblock %}

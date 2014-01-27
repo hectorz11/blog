@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block titulo %} Categorias {% endblock %}
+
+{% block contenido %}
+
+	<div class="welcome">
+		<h2>Seccion Categorias!</h2>
+		<p>	Este es la primer trabajo que tuve en Django de la comunidad de Basadrinux, espero que pueda ser de provecho
+			a todos. Nuestro comunidad esta haciendo lo posible para poner su granito de arena, y demostrar que internet
+			puede ser trabajado con otras herramientas diferentes a PHP 0 .NET, como diria Wilber Zapana: Problemas?!u.u
+		</p>
+		<p>Aqui podriamos necesitar una paginacion ...</p>
+	</div>
+
+	{% for categoria in categorias %}
+		<div class="categorias">
+			<li><a href="{{ Categoria.get_absolute_url }}">{{ categoria.categoria|upper|safe }}</a></li>
+		</div>
+	{% endfor %}
+	
+{% endblock %}

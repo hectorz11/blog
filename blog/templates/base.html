@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block titulo %}  {% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:300,400">
+	<link rel="stylesheet" type="text/css" href="/public/style.css">
+</head>
+<body>
+<div class="wrapper">
+	<h1 class="sitename">Mi Django Blog</h1>
+	<span class="slogan">Un tutorial de @HectorRZC</span>
+	<ul id="nav">
+		<li><a href="/" title="Home">Home</a></li>
+		<li><a href="/blog" title="Home">Blog</a></li>
+		<li><a href="/categorias/" title="Categorias">Categorias</a></li>
+	</ul>
+
+	{% block contenido %}
+	{% endblock%}
+
+	<div id="footer">
+		<p>Todos los derechos reservados &copy @HectorRZC
+			<br>
+			Desarrollador por: <a href="http://www.twitter.com/HectorRZC">@Hector</a>
+		</p>
+	</div>
+</div>
+</body>
+</html>
